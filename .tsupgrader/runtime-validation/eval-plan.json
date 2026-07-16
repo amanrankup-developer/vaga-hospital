@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "vaga-runtime-validation",
+  "description": "Basic runtime validation plan for the Vaga Next.js app",
+  "projectType": "webapp",
+  "assertions": [
+    {
+      "name": "build-succeeds",
+      "type": "command",
+      "command": "C:\\Users\\LENOVO\\AppData\\Roaming\\npm\\npm.cmd run build",
+      "expected": "success"
+    }
+  ]
+}

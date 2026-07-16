@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Vaga Hospital",
+  title: "Vaga-Hospital",
   description: "Modern Hospital Website",
-   icons: {
+  icons: {
     icon: "/icons/favicon.png",
-    
   },
 };
 

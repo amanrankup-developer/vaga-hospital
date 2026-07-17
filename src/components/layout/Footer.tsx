@@ -1,15 +1,16 @@
 // components/Footer.tsx
 import Link from "next/link";
 import { MapPin, Phone, Mail, ArrowUp } from "lucide-react";
+import Image from "next/image";
 
 const quickLinks = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
+  { label: "About Us", href: "/about-us" },
   { label: "Empanalments", href: "/empanalments" },
   { label: "Photo Gallery", href: "/gallery" },
   { label: "Press Release", href: "/press" },
   { label: "Career", href: "/career" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact Us", href: "/contact-us" },
   { label: "Blogs", href: "/blogs" },
 ];
 
@@ -24,22 +25,22 @@ const specialities = [
 export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-slate-950 text-slate-300">
-      {/* subtle background glow */}
       <div className="pointer-events-none absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-sky-600/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-375 px-6 py-16 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_0.8fr_0.8fr_1fr]">
           {/* Brand column */}
           <div>
-            <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold">
-                <span className="text-emerald-400">V</span>
-                <span className="text-orange-400">H</span>
-              </span>
-              <span className="text-lg font-bold tracking-tight text-white">
-                VAGA HOSPITAL
-              </span>
-            </div>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/vaga-footer.png"
+                alt="Vaga Hospital"
+                width={340}
+                height={90}
+                priority
+                className="h-auto w-[220px] object-contain"
+              />
+            </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-slate-400">
               A 50+ bedded super speciality hospital in Lucknow, bringing
               compassionate care and advanced medicine together for every step
@@ -47,20 +48,29 @@ export function Footer() {
             </p>
 
             <div className="mt-6 flex items-center gap-3">
-              {[
-                { icon: Mail, href: "#" },
-                { icon: Phone, href: "#" },
-                { icon: MapPin, href: "#" },
-                { icon: ArrowUp, href: "#" },
-              ].map(({ icon: Icon, href }, i) => (
-                <Link
-                  key={i}
-                  href={href}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 text-slate-400 transition hover:border-sky-500 hover:text-sky-400"
-                >
-                  <Icon size={16} />
-                </Link>
-              ))}
+              <Link
+                href="mailto:vagahealthcare@gmail.com"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 text-slate-400 transition hover:border-sky-500 hover:text-sky-400"
+                aria-label="Email"
+              >
+                <Mail size={16} />
+              </Link>
+              <Link
+                href="tel:+916391000030"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 text-slate-400 transition hover:border-sky-500 hover:text-sky-400"
+                aria-label="Call"
+              >
+                <Phone size={16} />
+              </Link>
+              <Link
+                href="https://maps.google.com/?q=KS-14+Aliganj+Housing+Scheme+Sitapur+Road+Lucknow"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 text-slate-400 transition hover:border-sky-500 hover:text-sky-400"
+                aria-label="Location"
+              >
+                <MapPin size={16} />
+              </Link>
             </div>
           </div>
 
@@ -150,7 +160,7 @@ export function Footer() {
           </p>
           <p>
             Website developed &amp; designed by{" "}
-            <span className="text-slate-300">Your Agency Name</span>
+            <span className="text-slate-300">RankUp Technologies</span>
           </p>
         </div>
       </div>

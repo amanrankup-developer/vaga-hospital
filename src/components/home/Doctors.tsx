@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { doctors } from "@/data/doctors";
 
 export function Doctors() {
@@ -19,11 +20,15 @@ export function Doctors() {
               key={doctor.name}
               className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_-24px_rgba(15,23,42,0.25)]"
             >
-              <img
-                src={doctor.image}
-                alt={doctor.name}
-                className="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
-              />
+              <div className="relative h-72 w-full overflow-hidden">
+                <Image
+                  src={doctor.image}
+                  alt={doctor.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
               <div className="p-6">
                 <p className="text-sm font-semibold text-sky-600">
                   {doctor.rating}

@@ -4,7 +4,7 @@ export const navigation: NavItem[] = [
   {
     label: "About",
     children: [
-      { label: "About Us", href: "/about" },
+      { label: "About Us", href: "/about-us" },
       { label: "Our Story", href: "/about/story" },
       { label: "Leadership", href: "/leadership" },
       { label: "Infrastructure", href: "/infrastructure" },
@@ -51,6 +51,6 @@ export const navigation: NavItem[] = [
   },
   {
     label: "Contact",
-    href: "/contact",
+    href: "/contact-us",
   },
 ];

@@ -3,17 +3,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Phone, Search, ChevronDown, Menu, X } from "lucide-react";
+import { Phone, Search, Menu, X } from "lucide-react";
 import Logo from "./Logo";
-
-const navLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Specialities", href: "/specialities", dropdown: true },
-  { label: "Doctors", href: "/doctors", dropdown: true },
-  { label: "Patient Care", href: "/patient-care", dropdown: true },
-  { label: "Resources", href: "/resources", dropdown: true },
-  { label: "Contact Us", href: "/contact" },
-];
+import { NavDropdown } from "./NavDropdown";
+import { MobileNav } from "./MobileNav";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -32,9 +25,9 @@ export function Navbar() {
         </div>
         <div className="flex items-center gap-6 whitespace-nowrap">
           <span className="font-semibold text-slate-900">
-            Emergency: 6391000030,31
+            Emergency: 6391 000030, 31
           </span>
-          <Link href="/contact" className="transition hover:text-sky-600">
+          <Link href="/contact-us" className="transition hover:text-sky-600">
             Contact Us
           </Link>
         </div>
@@ -43,37 +36,53 @@ export function Navbar() {
       {/* Main Navbar */}
       <div className="border-t border-slate-100">
         <div className="mx-auto flex h-[76px] max-w-[1500px] items-center gap-4 px-6 lg:px-10">
-          {/* Logo (your component, sized down to fit this row) */}
+          {/* Logo */}
           <div className="shrink-0 [&_img]:h-10 [&_img]:w-auto">
             <Logo />
           </div>
 
-          {/* Nav links */}
-          <nav className="hidden flex-1 items-center justify-center gap-5 whitespace-nowrap xl:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="inline-flex items-center gap-1 text-sm font-medium text-slate-700 transition hover:text-sky-600"
-              >
-                {link.label}
-                {link.dropdown && <ChevronDown size={14} />}
-              </Link>
-            ))}
+          {/* Desktop nav */}
+          <nav className="hidden flex-1 items-center justify-center gap-6 whitespace-nowrap xl:flex">
+            <Link
+              href="/about-us"
+              className="text-sm font-medium text-slate-700 transition hover:text-sky-600"
+            >
+              About Us
+            </Link>
+
+            <NavDropdown label="Specialities" />
+            <NavDropdown label="Doctors" />
+            <NavDropdown label="Patient Care" />
+
+            <Link
+              href="/facilities"
+              className="text-sm font-medium text-slate-700 transition hover:text-sky-600"
+            >
+              Facilities
+            </Link>
+
+            <NavDropdown label="Resources" />
+
+            <Link
+              href="/contact-us"
+              className="text-sm font-medium text-slate-700 transition hover:text-sky-600"
+            >
+              Contact Us
+            </Link>
           </nav>
 
           {/* Right actions */}
           <div className="ml-auto flex shrink-0 items-center gap-3">
-            <div className="hidden h-10 w-[200px] items-center rounded-full border border-slate-200 bg-slate-50 px-3.5 2xl:w-[260px] xl:flex">
+            <div className="hidden h-10 w-[150px] items-center rounded-full border border-slate-200 bg-slate-50 px-3.5 2xl:w-[200px] xl:flex">
               <Search size={16} className="shrink-0 text-slate-400" />
               <input
-                placeholder="Search doctors, departments..."
+                placeholder="Search..."
                 className="ml-2 w-full min-w-0 bg-transparent text-xs text-slate-700 outline-none placeholder:text-slate-400"
               />
             </div>
 
             <Link
-              href="tel:+919999999999"
+              href="tel:+916391000030"
               className="hidden items-center gap-1.5 whitespace-nowrap rounded-full border border-red-200 bg-red-50 px-4 py-2 text-sm font-semibold text-red-600 transition hover:bg-red-100 xl:flex"
             >
               <Phone size={15} />
@@ -91,28 +100,8 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile dropdown */}
-      {mobileOpen && (
-        <div className="border-t border-slate-100 bg-white px-6 py-4 xl:hidden">
-          <nav className="flex flex-col gap-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="py-2 text-sm font-medium text-slate-700"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/appointment"
-              className="mt-2 inline-flex h-10 items-center justify-center rounded-full bg-sky-600 text-sm font-semibold text-white"
-            >
-              Book Appointment
-            </Link>
-          </nav>
-        </div>
-      )}
+      {/* Mobile menu */}
+      {mobileOpen && <MobileNav onClose={() => setMobileOpen(false)} />}
     </header>
   );
 }

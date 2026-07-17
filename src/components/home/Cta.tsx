@@ -21,7 +21,7 @@ export function Cta() {
             Schedule Visit
           </Link>
           <Link
-            href="/contact"
+            href="/contact-us"
             className="rounded-full border border-slate-700 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-400 hover:text-sky-300"
           >
             Contact Us

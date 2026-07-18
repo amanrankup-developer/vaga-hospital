@@ -1,21 +1,27 @@
-import type { Testimonial } from "@/types";
+// data/testimonials.ts
+export interface Testimonial {
+  author: string;
+  role: string;
+  quote: string;
+}
 
 export const testimonials: Testimonial[] = [
   {
-    quote:
-      "The care felt personal, precise, and genuinely compassionate from the first visit.",
     author: "Nina Patel",
     role: "Post-surgery patient",
+    quote:
+      "From the moment I walked in, the staff was genuinely compassionate. My surgery went smoothly and the follow-up care has been excellent.",
   },
   {
-    quote: "Everything from booking to follow-up was seamless and reassuring.",
     author: "Marcus Lee",
     role: "Emergency care patient",
+    quote:
+      "The emergency team responded quickly and kept my family informed every step of the way. The whole experience felt seamless and reassuring.",
   },
   {
-    quote:
-      "The doctors are world-class and the experience feels calm, premium, and modern.",
     author: "Sofia Alvarez",
     role: "Wellness patient",
+    quote:
+      "Clean facilities, attentive doctors, and a genuinely warm environment. Every visit here feels calm, premium, and modern.",
   },
 ];

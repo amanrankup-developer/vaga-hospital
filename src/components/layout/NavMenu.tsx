@@ -19,7 +19,7 @@ export function NavMenu() {
             >
               {item.label}
 
-              <span className="absolute -bottom-[2px] left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full bg-sky-600 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-0.5 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-sky-600 transition-all duration-300 group-hover:w-full" />
             </Link>
           ) : (
             <button
@@ -33,7 +33,7 @@ export function NavMenu() {
                 className="transition-transform duration-300 group-hover:rotate-180"
               />
 
-              <span className="absolute -bottom-[2px] left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full bg-sky-600 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-0.5 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-sky-600 transition-all duration-300 group-hover:w-full" />
             </button>
           )}
 

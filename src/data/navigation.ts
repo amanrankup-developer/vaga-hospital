@@ -47,7 +47,6 @@ export const patientCare = [
   { label: "NICU & Critical Care", href: "/patient-care/nicu-critical-care" },
   { label: "Empanalments", href: "/patient-care/empanalments" },
   { label: "Physiotherapy", href: "/patient-care/physiotherapy" },
-  { label: "Facilities & Wards", href: "/facilities" },
 ];
 
 export const resources = [

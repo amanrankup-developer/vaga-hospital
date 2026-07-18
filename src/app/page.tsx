@@ -4,7 +4,9 @@ import { Doctors } from "@/components/home/Doctors";
 import { Hero } from "@/components/home/Hero";
 import { Services } from "@/components/home/Services";
 import { Stats } from "@/components/home/Stats";
+import { Faq } from "@/components/home/Faq";
 import { Testimonials } from "@/components/home/Testimonials";
+
 
 export default function Home() {
   return (
@@ -15,6 +17,7 @@ export default function Home() {
       <Departments />
       <Doctors />
       <Testimonials />
+         <Faq />
       <Cta />
     </main>
   );

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import type { NavChild } from "@/types/navigation";
 
 import { navigation } from "@/constants/navigation";
 
@@ -44,7 +45,7 @@ export function MobileMenu() {
 
                 {item.children?.length ? (
                   <div className="mt-2 space-y-2">
-                    {item.children.map((child) => (
+                    {item.children.map((child: NavChild) => (
                       <Link
                         key={child.label}
                         href={child.href}

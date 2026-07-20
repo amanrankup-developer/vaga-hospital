@@ -1,4 +1,4 @@
-// data/navigation.ts
+
 
 export const specialities = [
   {

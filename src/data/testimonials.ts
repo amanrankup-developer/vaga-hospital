@@ -1,9 +1,4 @@
-// data/testimonials.ts
-export interface Testimonial {
-  author: string;
-  role: string;
-  quote: string;
-}
+import type { Testimonial } from "@/types/testimonial";
 
 export const testimonials: Testimonial[] = [
   {

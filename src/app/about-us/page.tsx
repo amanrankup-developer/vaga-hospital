@@ -1,4 +1,4 @@
-// app/about/page.tsx
+
 import Image from "next/image";
 import FadeUp from "@/components/animations/FadeUp";
 import FadeLeft from "@/components/animations/FadeLeft";

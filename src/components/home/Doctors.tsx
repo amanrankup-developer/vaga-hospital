@@ -28,8 +28,8 @@ export function Doctors() {
 
             <p className="mt-5 text-lg leading-8 text-slate-600">
               Our experienced specialists are committed to delivering
-              compassionate, evidence-based healthcare with the latest
-              medical technology.
+              compassionate, evidence-based healthcare with the latest medical
+              technology.
             </p>
           </div>
         </FadeUp>
@@ -40,13 +40,13 @@ export function Doctors() {
             <FadeUp key={doctor.name} delay={index * 150}>
               <div className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-3 hover:border-sky-300 hover:shadow-[0_25px_70px_-20px_rgba(14,165,233,0.25)]">
                 {/* Image */}
-                <div className="relative h-80 overflow-hidden">
+                <div className="relative h-[420px] overflow-hidden rounded-t-3xl">
                   <Image
                     src={doctor.image}
                     alt={doctor.name}
                     fill
                     sizes="(max-width:768px)100vw,33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
 
                   {/* Gradient Overlay */}
@@ -73,8 +73,8 @@ export function Doctors() {
                   </p>
 
                   <p className="mt-4 text-sm leading-7 text-slate-600">
-                    Dedicated to providing personalized treatment using
-                    advanced medical technology and compassionate care.
+                    Dedicated to providing personalized treatment using advanced
+                    medical technology and compassionate care.
                   </p>
 
                   {/* Experience Badge */}
@@ -88,7 +88,6 @@ export function Doctors() {
                     className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-sky-600 transition-all duration-300 group-hover:translate-x-1"
                   >
                     Book Appointment
-
                     <ArrowRight
                       size={16}
                       className="transition-transform duration-300 group-hover:translate-x-1"

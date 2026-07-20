@@ -1,19 +1,33 @@
-// components/Navbar.tsx
+
 "use client";
 
-import { useState } from "react";
+import { useState} from "react";
 import Link from "next/link";
 import { Phone, Menu, X } from "lucide-react";
 import Logo from "./Logo";
 import { NavDropdown } from "../NavDropdown";
 import { MobileNav } from "../MobileNav";
 import { SearchButton } from "../SearchButton";
+import { useScrollDirection } from "@/hooks/useScrollDirection";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+const showNavbar = useScrollDirection();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 shadow-[0_14px_45px_-24px_rgba(15,23,42,0.22)] backdrop-blur-xl">
+  <header
+  className={`fixed top-0 left-0 right-0 z-50 w-full
+  border-b border-slate-200/80
+  bg-white/95
+  backdrop-blur-xl
+  shadow-[0_14px_45px_-24px_rgba(15,23,42,0.22)]
+  transition-transform duration-300 ease-in-out
+  ${
+    showNavbar
+      ? "translate-y-0"
+      : "-translate-y-full"
+  }`}
+>
       {/* Top Bar */}
       <div className="mx-auto hidden h-11 max-w-375 items-center justify-between px-6 text-sm text-slate-600 lg:flex lg:px-10">
         <div className="flex items-center gap-5 whitespace-nowrap">

@@ -56,9 +56,9 @@ export function Hero() {
 
             <FadeUp delay={700}>
               <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600">
-                Welcome to Vaga Hospital, where experienced clinicians,
-                advanced diagnostics, and compassionate care come together to
-                provide exceptional healthcare for every patient.
+                Welcome to Vaga Hospital, where experienced clinicians, advanced
+                diagnostics, and compassionate care come together to provide
+                exceptional healthcare for every patient.
               </p>
             </FadeUp>
 
@@ -69,10 +69,7 @@ export function Hero() {
                     key={badge}
                     className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                   >
-                    <CheckCircle2
-                      size={16}
-                      className="text-sky-600"
-                    />
+                    <CheckCircle2 size={16} className="text-sky-600" />
                     {badge}
                   </span>
                 ))}
@@ -86,7 +83,6 @@ export function Hero() {
                   className="group inline-flex items-center gap-2 rounded-full bg-sky-600 px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-sky-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-sky-700 hover:shadow-xl"
                 >
                   Book Appointment
-
                   <ArrowRight
                     size={18}
                     className="transition-transform duration-300 group-hover:translate-x-1"
@@ -98,7 +94,6 @@ export function Hero() {
                   className="group inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-7 py-4 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-1 hover:border-sky-500 hover:text-sky-700 hover:shadow-md"
                 >
                   Meet Our Doctors
-
                   <ArrowRight
                     size={18}
                     className="transition-transform duration-300 group-hover:translate-x-1"
@@ -117,6 +112,7 @@ export function Hero() {
                   alt="Vaga Hospital"
                   fill
                   priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-contain transition-transform duration-700 group-hover:scale-105"
                 />
               </div>

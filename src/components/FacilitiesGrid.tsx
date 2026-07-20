@@ -1,4 +1,4 @@
-// components/GalleryGrid.tsx
+
 "use client";
 
 import { useState } from "react";
@@ -6,18 +6,57 @@ import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Expand } from "lucide-react";
 
 const images = [
-  { src: "/images/gallery/opd.webp", title: "OPD Area", tag: "Outpatient" },
-  { src: "/images/gallery/icu.webp", title: "ICU", tag: "Critical Care" },
-  { src: "/images/gallery/ward-1.webp", title: "General Ward", tag: "Recovery" },
-  { src: "/images/gallery/ward-2.webp", title: "General Ward", tag: "Recovery" },
-  { src: "/images/gallery/nicu-1.webp", title: "NICU", tag: "Neonatal" },
-  { src: "/images/gallery/nicu-2.webp", title: "NICU", tag: "Neonatal" },
-  { src: "/images/gallery/dialysis.webp", title: "Dialysis Machine", tag: "Equipment" },
-  { src: "/images/gallery/emergency.webp", title: "Emergency Ward", tag: "Emergency" },
-  { src: "/images/gallery/private-1.webp", title: "Private Ward", tag: "Recovery" },
-  { src: "/images/gallery/private-2.webp", title: "Private Ward", tag: "Recovery" },
+  {
+    src: "/images/facilities/opd.webp",
+    title: "OPD Area",
+    tag: "Outpatient",
+  },
+  {
+    src: "/images/facilities/icu.webp",
+    title: "ICU",
+    tag: "Critical Care",
+  },
+  {
+    src: "/images/facilities/general ward.webp",
+    title: "General Ward",
+    tag: "Recovery",
+  },
+  {
+    src: "/images/facilities/general ward 1.webp",
+    title: "General Ward",
+    tag: "Recovery",
+  },
+  {
+    src: "/images/facilities/nicu.webp",
+    title: "NICU",
+    tag: "Neonatal",
+  },
+  {
+    src: "/images/facilities/nicu1.webp",
+    title: "NICU",
+    tag: "Neonatal",
+  },
+  {
+    src: "/images/facilities/DIALYSIS MACHINE.webp",
+    title: "Dialysis Machine",
+    tag: "Equipment",
+  },
+  {
+    src: "/images/facilities/EMERGENCY WARD.webp",
+    title: "Emergency Ward",
+    tag: "Emergency",
+  },
+  {
+    src: "/images/facilities/PRIVATE WARD.webp",
+    title: "Private Ward",
+    tag: "Recovery",
+  },
+  {
+    src: "/images/facilities/PRIVATE WARD1.webp",
+    title: "Private Ward",
+    tag: "Recovery",
+  },
 ];
-
 const filters = ["All", "Outpatient", "Critical Care", "Recovery", "Neonatal", "Equipment", "Emergency"];
 
 export function GalleryGrid() {

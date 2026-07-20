@@ -1,4 +1,4 @@
-import type { Doctor } from "@/types";
+import type { Doctor } from "@/types/doctor";
 
 export const doctors: Doctor[] = [
   {
@@ -6,7 +6,7 @@ export const doctors: Doctor[] = [
     specialty: "Ophthalmology",
     experience: "20 years",
     image:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80",
+      "/images/pallavi.jpg",
     rating: "4.9/5",
   },
   {
@@ -14,7 +14,7 @@ export const doctors: Doctor[] = [
     specialty: "Cardiology",
     experience: "18 years",
     image:
-      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=80",
+      "/images/dr-ujwal-maheshwari.webp",
     rating: "4.8/5",
   },
   {
@@ -22,7 +22,7 @@ export const doctors: Doctor[] = [
     specialty: "Neurosurgery",
     experience: "16 years",
     image:
-      "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=900&q=80",
+      "/images/dr-tusar-sir.webp",
     rating: "4.95/5",
   },
 ];

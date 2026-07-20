@@ -1,4 +1,4 @@
-// app/gallery/page.tsx
+
 import { GalleryGrid } from "@/components/FacilitiesGrid";
 
 export default function GalleryPage() {

@@ -1,3 +1,4 @@
+// components/stats/Stats.tsx
 "use client";
 
 import CountUp from "react-countup";
@@ -9,6 +10,7 @@ import {
 } from "lucide-react";
 
 import FadeUp from "@/components/animations/FadeUp";
+import ScaleIn from "@/components/animations/ScaleIn";
 
 const stats = [
   {
@@ -47,7 +49,7 @@ export function Stats() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          {/* Left Content */}
+          {/* LEFT CONTENT */}
           <FadeUp>
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-sky-600">
@@ -65,13 +67,13 @@ export function Stats() {
             </div>
           </FadeUp>
 
-          {/* Stats Grid */}
+          {/* STATS GRID */}
           <div className="grid gap-6 sm:grid-cols-2">
             {stats.map((stat, index) => {
               const Icon = stat.icon;
 
               return (
-                <FadeUp key={stat.label} delay={index * 120}>
+                <ScaleIn key={stat.label} delay={index * 150}>
                   <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-sky-300 hover:shadow-[0_25px_70px_-20px_rgba(14,165,233,0.25)]">
                     {/* Background Glow */}
                     <div className="absolute inset-0 bg-gradient-to-br from-sky-50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -79,26 +81,32 @@ export function Stats() {
                     <div className="relative z-10">
                       {/* Icon */}
                       <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-100 text-sky-600 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
-                        <Icon size={28} />
+                        <Icon size={28} strokeWidth={1.5} />
                       </div>
 
                       {/* Animated Number */}
                       <h3 className="mt-6 text-4xl font-bold text-slate-950">
                         <CountUp
                           end={stat.value}
-                          duration={2}
+                          duration={2.5}
                           decimals={stat.decimals ?? 0}
+                          suffix={stat.suffix}
+                          enableScrollSpy={true}
+                          scrollSpyOnce={true}
+                          useEasing={true}
+                          easingFn={(t, b, c, d) => {
+                            return -c * ((t = t / d - 1) * t * t * t - 1) + b;
+                          }}
                         />
-                        {stat.suffix}
                       </h3>
 
                       {/* Label */}
-                      <p className="mt-3 text-sm leading-6 text-slate-600">
+                      <p className="mt-2 text-sm leading-6 text-slate-600">
                         {stat.label}
                       </p>
                     </div>
                   </div>
-                </FadeUp>
+                </ScaleIn>
               );
             })}
           </div>

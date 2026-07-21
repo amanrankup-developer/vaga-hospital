@@ -2,6 +2,22 @@
 
 :root {
   color-scheme: light;
+
+  /* =========================
+     Brand Colors
+  ========================= */
+
+  --color-primary: #1B6FA8;
+  --color-primary-dark: #143A63;
+  --color-secondary: #1FA8A5;
+  --color-accent: #F28C28;
+
+  --color-heading: #143A63;
+  --color-text: #4B5563;
+
+  --color-background: #F8FCFF;
+  --color-surface: #FFFFFF;
+  --color-border: #D8EAF5;
 }
 
 /* =========================
@@ -24,8 +40,8 @@
   }
 
   body {
-    background: #ffffff;
-    color: #0f172a;
+    background: var(--color-background);
+    color: var(--color-text);
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -48,8 +64,8 @@
   }
 
   ::selection {
-    background: rgba(14, 165, 233, 0.2);
-    color: #0f172a;
+    background: rgba(27, 111, 168, 0.2);
+    color: var(--color-heading);
   }
 }
 
@@ -61,7 +77,6 @@
   0%, 100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-12px);
   }
@@ -71,7 +86,6 @@
   0%, 100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-8px);
   }
@@ -81,7 +95,6 @@
   0%, 100% {
     opacity: 0.25;
   }
-
   50% {
     opacity: 0.4;
   }
@@ -91,7 +104,6 @@
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
@@ -102,7 +114,6 @@
     opacity: 0;
     transform: translateY(-16px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -114,7 +125,6 @@
     opacity: 0;
     transform: translateY(16px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -126,7 +136,6 @@
     opacity: 0;
     transform: scale(0.95);
   }
-
   to {
     opacity: 1;
     transform: scale(1);
@@ -137,7 +146,6 @@
   from {
     transform: translateX(0);
   }
-
   to {
     transform: translateX(-100%);
   }

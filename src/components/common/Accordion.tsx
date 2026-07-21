@@ -1,4 +1,4 @@
-// components/common/Accordion.tsx
+
 "use client";
 
 import { useState } from "react";

@@ -1,8 +1,9 @@
+// components/layout/Navbar.tsx
 "use client";
 
 import { useState } from "react";
 import Link from "next/link";
-import { Phone, Menu, X, Calendar, Users, Heart, Stethoscope } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 import Logo from "./Logo";
 import { NavDropdown } from "../NavDropdown";
 import { MobileNav } from "../MobileNav";
@@ -19,38 +20,45 @@ export function Navbar() {
         showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      {/* Top Bar */}
-      <div className="border-b border-slate-100 bg-slate-50/80">
-        <div className="mx-auto flex h-8 max-w-7xl items-center justify-between px-4 text-[11px] text-slate-600 sm:px-6 lg:px-8 xl:px-10">
-          <div className="flex items-center gap-4">
-            <span className="inline-flex items-center gap-1.5">
-              <span className="hidden sm:inline">📍</span> Lucknow, Uttar Pradesh
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="hidden sm:inline">🕒</span> Open 24 Hours
-            </span>
+      {/* ========================= TOP BAR ========================= */}
+      <div className="hidden lg:block border-b border-slate-100/60 bg-white">
+        <div className="mx-auto flex h-12 max-w-screen-2xl items-center justify-between px-5 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
+          {/* Left */}
+          <div className="flex items-center gap-8">
+            <div className="flex items-center gap-2 whitespace-nowrap text-[15px] text-slate-600">
+              <span className="text-base">📍</span>
+
+              <span className="font-medium">Lucknow, Uttar Pradesh</span>
+            </div>
+
+            <div className="flex items-center gap-2 whitespace-nowrap text-[15px] text-slate-600">
+              <span className="text-base">🕒</span>
+
+              <span className="font-medium">Open 24 Hours</span>
+            </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            <span className="font-medium text-slate-700 hidden xs:inline-block">
-              Emergency: <span className="text-red-600">6391 000030, 31</span>
-            </span>
+          {/* Right */}
+          <div className="flex items-center gap-5">
+            <p className="whitespace-nowrap text-[15px] font-semibold text-slate-900">
+              Emergency :<span className="ml-1 font-bold">6391 000030, 31</span>
+            </p>
+
             <Link
               href="/contact-us"
-              className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-200/70 text-slate-600 transition-all hover:bg-sky-600 hover:text-white"
               aria-label="Contact Us"
-            >
-              <Phone size={13} />
+             className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-all duration-300 hover:border-sky-500 hover:bg-sky-600 hover:text-white hover:shadow-lg hover:shadow-sky-600/25">
+              <Phone size={18} />
             </Link>
           </div>
         </div>
       </div>
-
       {/* Main Navbar */}
       <div className="border-b border-slate-100">
-        <div className="mx-auto flex h-16 items-center gap-3 px-4 sm:px-6 lg:h-[72px] lg:gap-6 lg:px-8 xl:px-10">
+       <div
+  className="mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-3 px-3 sm:px-4 lg:h-18 lg:px-8 xl:px-10">
           {/* Logo */}
-          <div className="shrink-0 max-w-[130px] sm:max-w-[150px] lg:max-w-[180px]">
+          <div className="min-w-0 flex-1">
             <Logo />
           </div>
 
@@ -81,15 +89,15 @@ export function Navbar() {
           </nav>
 
           {/* Right Actions */}
-          <div className="ml-auto flex items-center gap-1 shrink-0 sm:gap-2">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
             <SearchButton />
 
             <Link
-              href="/appointment"
-              className="hidden items-center gap-1.5 rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-sky-600/20 transition hover:bg-sky-700 hover:shadow-xl lg:flex"
+              href="tel:+916391000030"
+              className="hidden items-center gap-2 rounded-full border border-red-200 bg-red-50 px-4 py-2 text-sm font-semibold text-red-600 transition hover:bg-red-100 lg:flex"
             >
-              <Calendar size={15} />
-              Book Now
+              <Phone size={15} />
+              Emergency
             </Link>
 
             <button

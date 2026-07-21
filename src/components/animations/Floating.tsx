@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 interface FloatingProps {
   children: React.ReactNode;
   speed?: "slow" | "normal" | "fast";
+    amplitude?: number;
 }
 
 export default function Floating({

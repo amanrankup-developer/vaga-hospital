@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Vaga-Hospital",
@@ -19,10 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-     <body className="overflow-x-hidden">
+      <body className="overflow-x-hidden">
         <Navbar />
         {children}
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

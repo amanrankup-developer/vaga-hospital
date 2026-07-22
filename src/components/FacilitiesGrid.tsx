@@ -1,4 +1,4 @@
-
+// components/GalleryGrid.tsx
 "use client";
 
 import { useState } from "react";
@@ -6,58 +6,17 @@ import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Expand } from "lucide-react";
 
 const images = [
-  {
-    src: "/images/facilities/opd.webp",
-    title: "OPD Area",
-    tag: "Outpatient",
-  },
-  {
-    src: "/images/facilities/icu.webp",
-    title: "ICU",
-    tag: "Critical Care",
-  },
-  {
-    src: "/images/facilities/general ward.webp",
-    title: "General Ward",
-    tag: "Recovery",
-  },
-  {
-    src: "/images/facilities/general ward 1.webp",
-    title: "General Ward",
-    tag: "Recovery",
-  },
-  {
-    src: "/images/facilities/nicu.webp",
-    title: "NICU",
-    tag: "Neonatal",
-  },
-  {
-    src: "/images/facilities/nicu1.webp",
-    title: "NICU",
-    tag: "Neonatal",
-  },
-  {
-    src: "/images/facilities/DIALYSIS MACHINE.webp",
-    title: "Dialysis Machine",
-    tag: "Equipment",
-  },
-  {
-    src: "/images/facilities/EMERGENCY WARD.webp",
-    title: "Emergency Ward",
-    tag: "Emergency",
-  },
-  {
-    src: "/images/facilities/PRIVATE WARD.webp",
-    title: "Private Ward",
-    tag: "Recovery",
-  },
-  {
-    src: "/images/facilities/PRIVATE WARD1.webp",
-    title: "Private Ward",
-    tag: "Recovery",
-  },
+  { src: "/images/facilities/general-ward.webp", title: "General Ward", tag: "Recovery" },
+  { src: "/images/facilities/general-ward-1.webp", title: "General Ward", tag: "Recovery" },
+  { src: "/images/facilities/icu.webp", title: "ICU", tag: "Critical Care" },
+  { src: "/images/facilities/nicu.webp", title: "NICU", tag: "Neonatal" },
+  { src: "/images/facilities/nicu-1.webp", title: "NICU", tag: "Neonatal" },
+  { src: "/images/facilities/dialysis-machine.webp", title: "Dialysis Machine", tag: "Equipment" },
+  { src: "/images/facilities/emergency-ward.webp", title: "Emergency Ward", tag: "Emergency" },
+  { src: "/images/facilities/private-ward.webp", title: "Private Ward", tag: "Recovery" },
+  { src: "/images/facilities/private-ward-1.webp", title: "Private Ward", tag: "Recovery" },
 ];
-const filters = ["All", "Outpatient", "Critical Care", "Recovery", "Neonatal", "Equipment", "Emergency"];
+const filters = ["All", "Critical Care", "Recovery", "Neonatal", "Equipment", "Emergency"];
 
 export function GalleryGrid() {
   const [active, setActive] = useState("All");
@@ -115,6 +74,7 @@ export function GalleryGrid() {
               src={img.src}
               alt={img.title}
               fill
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-950/0 to-slate-950/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -164,6 +124,7 @@ export function GalleryGrid() {
               src={filtered[lightboxIndex].src}
               alt={filtered[lightboxIndex].title}
               fill
+              sizes="(max-width: 640px) 100vw, 512px"
               className="object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-slate-950/90 to-transparent p-6">

@@ -41,24 +41,23 @@ export function Doctors() {
             <FadeUp key={doctor.name} delay={index * 150}>
               <div className="group overflow-hidden rounded-3xl border border-[#D8EAF5] bg-white shadow-sm transition-all duration-500 hover:-translate-y-3 hover:border-[#1B6FA8] hover:shadow-[0_25px_70px_-20px_rgba(27,111,168,0.25)]">
                 {/* Image */}
-                <div className="relative h-[420px] overflow-hidden rounded-t-3xl">
+                <div className="relative h-105 overflow-hidden rounded-t-3xl">
                   <Image
                     src={doctor.image}
                     alt={doctor.name}
                     fill
-                    sizes="(max-width:768px)100vw,33vw"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    priority={index < 3}
+                    loading={index < 3 ? undefined : "lazy"}
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
 
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#143A63]/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute inset-0 bg-linner-to-t from-[#143A63]/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
                   {/* Rating */}
                   <div className="absolute left-5 top-5 flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-sm font-semibold text-[#143A63] shadow">
-                    <Star
-                      size={14}
-                      className="fill-[#F28C28] text-[#F28C28]"
-                    />
+                    <Star size={14} className="fill-[#F28C28] text-[#F28C28]" />
                     {doctor.rating}
                   </div>
                 </div>
@@ -69,13 +68,13 @@ export function Doctors() {
                     {doctor.name}
                   </h3>
 
-                  <p className="mt-2 text-[#1FA8A5] font-medium">
+                  <p className="mt-2 font-medium text-[#1FA8A5]">
                     {doctor.specialty}
                   </p>
 
                   <p className="mt-4 text-sm leading-7 text-[#4B5563]">
-                    Dedicated to providing personalized treatment using advanced
-                    medical technology and compassionate care.
+                    Dedicated to providing personalized treatment using
+                    advanced medical technology and compassionate care.
                   </p>
 
                   {/* Experience Badge */}

@@ -4,20 +4,17 @@ import Link from "next/link";
 
 export default function Logo() {
   return (
-    <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
-      {/* Logo */}
+    <Link href="/" className="flex items-center gap-3 shrink-0">
       <Image
         src="/images/vaga-logo.webp"
         alt="Vaga Hospital"
         width={230}
         height={70}
         priority
-        className="h-9 w-auto shrink-0 sm:h-10 md:h-11 lg:h-12"
-        style={{ width: 'auto', height: 'auto' }}
+        className="h-12 w-auto"
       />
 
-      {/* Hospital Name */}
-      <div className="hidden border-l border-slate-200 pl-3 lg:block">
+      <div className="hidden lg:block border-l border-slate-200 pl-3">
         <p className="text-sm font-semibold leading-none text-slate-800">
           Multi Speciality Hospital
         </p>

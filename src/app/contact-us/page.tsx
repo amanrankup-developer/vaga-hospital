@@ -10,7 +10,7 @@ export default function ContactPage() {
     <main className="bg-[#F8FCFF] pt-20 md:pt-24">
       {/* Header */}
       <FadeUp>
-        <section className="bg-gradient-to-b from-[#EAF6FD] to-white px-6 py-16 text-center lg:px-10">
+        <section className="bg-linear-to-b from-[#EAF6FD] to-white px-6 py-16 text-center lg:px-10">
           <p className="text-sm font-semibold text-[#1B6FA8]">Get in Touch</p>
           <h1 className="mx-auto mt-3 max-w-2xl text-4xl font-bold tracking-tight text-[#143A63] sm:text-5xl">
             We&apos;re here to help, anytime you need us.
@@ -23,7 +23,7 @@ export default function ContactPage() {
       </FadeUp>
 
       {/* Info cards */}
-      <section className="mx-auto -mt-4 max-w-[1200px] px-6 pb-4 lg:px-10">
+      <section className="mx-auto -mt-4 max-w-300 px-6 pb-4 lg:px-10">
         <div className="grid gap-5 sm:grid-cols-3">
           <FadeUp delay={0}>
             <div className="group rounded-2xl border border-[#D8EAF5] bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#1B6FA8] hover:shadow-[0_25px_70px_-20px_rgba(27,111,168,0.25)]">
@@ -83,7 +83,7 @@ export default function ContactPage() {
       </section>
 
       {/* Form + Map */}
-      <section className="mx-auto max-w-[1200px] px-6 py-16 lg:px-10">
+      <section className="mx-auto max-w-300 px-6 py-16 lg:px-10">
         <div className="grid gap-10 lg:grid-cols-2">
           {/* Left: form */}
           <FadeLeft>
